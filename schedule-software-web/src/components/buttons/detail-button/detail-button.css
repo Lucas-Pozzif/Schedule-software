@@ -1,0 +1,13 @@
+.detail-button {
+    height: 14px;
+    max-width: 250px;
+    border-radius: 7px;
+    background-color: var(--terciary-color);
+    display: inline-flex;
+    align-items: center;
+    padding-inline: 10px;
+}
+.detail-button-text{
+    font-size: 12px;
+    color: var(--secondary-color);
+}

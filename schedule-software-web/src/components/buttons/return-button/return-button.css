@@ -1,0 +1,13 @@
+.return-button-icon {
+    fill: var(--terciary-color);
+    width: 60px;
+    height: 60px;
+}
+
+.icon-color-dark {
+    fill: var(--terciary-color);
+}
+
+.icon-color-light {
+    fill: var(--secondary-color)
+}
