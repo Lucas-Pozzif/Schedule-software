@@ -1,5 +1,5 @@
 import { localLanguage } from "../../../../data/language-selector";
-import { timeFormatter } from "../../../../functions/time-formatter";
+import { timeFormatter } from "../../../../functions/time-formatter/time-formatter";
 
 import './right-block.css';
 

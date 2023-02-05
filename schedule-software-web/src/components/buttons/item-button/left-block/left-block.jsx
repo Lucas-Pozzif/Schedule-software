@@ -1,5 +1,6 @@
 import React from "react";
 import { localLanguage } from "../../../../data/language-selector";
+import { subtitleHandler } from "../../../../functions/subtitle-handler/subtitle-handler";
 import { DetailButton } from "../../detail-button/detail-button";
 
 import './left-block.css';
@@ -11,32 +12,6 @@ export function IBLeftBlock({
     selected
 
 }) {
-
-
-    function subtitleHandler() {
-        const listLength = subtitle.length
-
-        while (subtitle.length > 3) {
-            subtitle.pop()
-        }
-        var textValue = subtitle.join(', ')
-
-        if (subtitle.length != listLength) {
-            var other = localLanguage.other.plural;
-
-            if (listLength - subtitle.length == 1) {
-                other = localLanguage.other.singular
-            }
-
-            textValue = `${textValue} & ${listLength - subtitle.length} ${other}`
-        } else {
-            textValue = textValue.split('')
-            textValue[textValue.lastIndexOf(',')] = ' &'
-            textValue.join('')
-        }
-
-        return textValue
-    }
 
     return (
         <div className='left-block'>
