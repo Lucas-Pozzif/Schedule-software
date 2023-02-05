@@ -1,0 +1,32 @@
+.pb-profile-button{
+    width: calc(100% - 30px);
+    height: 80px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--secondary-color);
+}
+.pb-return-button {
+    margin: 5px;
+}
+.pb-right-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pb-title-block{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.pb-title-text{
+    font-size: 24px;
+    color: var(--terciary-color);
+}
+.pb-profile-picture{
+    margin: 5px;
+    height: 70px;
+    width: 70px;
+    border-radius: 5px;
+}
