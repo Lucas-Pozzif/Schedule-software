@@ -1,0 +1,9 @@
+:root {
+    --secondary-color: #C6AC8F;
+    --terciary-color: #5E503F;
+    --font-family: 'Actor'
+}
+@font-face {
+    font-family: "Actor";
+    src: url("Actor-Regular.ttf");
+}
