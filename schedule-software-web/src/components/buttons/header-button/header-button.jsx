@@ -1,22 +1,22 @@
 import { subtitleHandler } from '../../../functions/subtitle-handler/subtitle-handler'
 import { DetailButton } from '../detail-button/detail-button'
 import { ReturnButton } from '../return-button/return-button'
-import './profile-button.css'
+import './header-button.css'
 
-export function ProfileButton({
+export function HeaderButton({
     title,
     subtitle,
     image
 
 }) {
     return (
-        <div className='pb-profile-button'>
-            <div className='pb-return-button'>
+        <div className='hb-profile-button'>
+            <div className='hb-return-button'>
             <ReturnButton size={40} />
             </div>
-            <div className='pb-right-block'>
-                <div className='pb-title-block'>
-                    <p className='pb-title-text'>{title}</p>
+            <div className='hb-right-block'>
+                <div className='hb-title-block'>
+                    <p className='hb-title-text'>{title}</p>
                     {
                         subtitle ?
                             <DetailButton text={subtitleHandler(subtitle)}></DetailButton> :
@@ -24,7 +24,7 @@ export function ProfileButton({
                     }
                 </div>
                 {image ?
-                    <img className='pb-profile-picture' src={image}></img> :
+                    <img className='hb-profile-picture' src={image}></img> :
                     null
                 }
             </div>
