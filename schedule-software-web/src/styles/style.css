@@ -19,3 +19,6 @@
 div {
     transition: 500ms;
 }
+p{
+    font-family: var(--font-family);
+}
