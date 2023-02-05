@@ -1,0 +1,46 @@
+.input {
+    background-color: var(--secondary-color);
+    color: var(--terciary-color);
+    width: calc(100% - 50px);
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    padding-inline: 10px;
+    font-size: 18px;
+}
+
+::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--terciary-color);
+    ;
+    opacity: .5;
+    /* Firefox */
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: var(--terciary-color);
+    ;
+}
+
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: var(--terciary-color);
+    ;
+}
+
+::-moz-selection {
+    /* Code for Firefox */
+    color: var(--terciary-color);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+::selection {
+    color: var(--terciary-color);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+textarea:focus,
+input:focus {
+    outline: none;
+}
