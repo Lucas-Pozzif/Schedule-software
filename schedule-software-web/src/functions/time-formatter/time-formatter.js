@@ -1,4 +1,4 @@
-import { defaultRange } from "../data/default-data";
+import { defaultRange } from "../../data/default-data";
 
 export function timeFormatter(duration, range = defaultRange) {
     if (duration === undefined) { return (''); }
