@@ -1,0 +1,16 @@
+.expanded-item {
+    width: 100%;
+    height: 60px;
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.stage-text {
+    margin-left: 5px;
+    color: var(--terciary-color);
+    font-size: 20px;
+    font-family: var(--font-family)
+}
