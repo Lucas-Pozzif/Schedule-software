@@ -1,6 +1,6 @@
 import { defaultRange } from "../data/default-data";
 
-export function timeFormatter(duration: number, range: number = defaultRange) {
+export function timeFormatter(duration, range = defaultRange) {
     if (duration === undefined) { return (''); }
 
     const minMinutes = (duration - range) % 60;
