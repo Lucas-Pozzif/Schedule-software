@@ -1,0 +1,13 @@
+{
+    "ptBr":{
+        "fromText":"A partir de",
+        "other":{
+            "singular":"outro",
+            "plural":"outros"
+        },
+        "see":{
+            "more":"Ver mais",
+            "less":"Ver menos"
+        }
+    }
+}
