@@ -1,5 +1,4 @@
 import React from "react";
-import ItemButtonData from "../../../../data/item-button-data";
 import { localLanguage } from "../../../../data/language-selector";
 import { DetailButton } from "../../detail-button/detail-button";
 
