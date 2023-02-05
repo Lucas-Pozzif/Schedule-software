@@ -1,23 +1,31 @@
 {
-    "ptBr":{
-        "fromText":"A partir de",
-        "other":{
-            "singular":"outro",
-            "plural":"outros"
+    "ptBr": {
+        "fromText": "A partir de",
+        "other": {
+            "singular": "outro",
+            "plural": "outros"
         },
-        "see":{
-            "more":"Ver mais",
-            "less":"Ver menos"
+        "see": {
+            "more": "Ver mais",
+            "less": "Ver menos"
         },
-        "select":"Selecionar",
-        "selected":{
-            "masculine":{
-                "singular":"Selecionado",
-                "plural":"Selecionados"
+        "select": "Selecionar",
+        "selected": {
+            "masculine": {
+                "singular": "Selecionado",
+                "plural": "Selecionados"
             },
-            "feminine":{
-                "singular":"Selecionada",
-                "plural":"Selecionadas"
+            "feminine": {
+                "singular": "Selecionada",
+                "plural": "Selecionadas"
+            }
+        },
+        "noPreference": "Sem preferência",
+        "search": "Pesquisar",
+        "professionalPage": {
+            "header": {
+                "title": "Não sabe exatamente quem escolher?",
+                "subtitle": "Deixa que a gente escolhe!"
             }
         }
     }
