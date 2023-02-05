@@ -1,0 +1,21 @@
+.secondary-color-background {
+    background-color: var(--secondary-color);
+}
+
+.secondary-color {
+    color: var(--secondary-color);
+}
+
+.terciary-color-background {
+    background-color: var(--terciary-color);
+
+}
+
+.terciary-color {
+    color: var(--terciary-color);
+
+}
+
+div {
+    transition: 500ms;
+}
