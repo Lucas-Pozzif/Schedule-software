@@ -7,3 +7,9 @@
     flex-direction: column;
     align-items: center;
 }
+.bigLine{
+    width: 100%;
+}
+.stageDiv{
+    width: 100%;
+}

@@ -3,4 +3,5 @@
     width: calc(100% - 20px);
     background-color: var(--terciary-color);
     border-radius: 1px;
+    z-index: 1;
 }

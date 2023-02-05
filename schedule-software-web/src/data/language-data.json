@@ -8,6 +8,17 @@
         "see":{
             "more":"Ver mais",
             "less":"Ver menos"
+        },
+        "select":"Selecionar",
+        "selected":{
+            "masculine":{
+                "singular":"Selecionado",
+                "plural":"Selecionados"
+            },
+            "feminine":{
+                "singular":"Selecionada",
+                "plural":"Selecionadas"
+            }
         }
     }
 }

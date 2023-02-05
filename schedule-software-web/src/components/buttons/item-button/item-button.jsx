@@ -1,45 +1,73 @@
 import React, { useState } from "react";
 import { IBLeftBlock } from "./left-block/left-block";
 import { IBRightBlock } from "./right-block/right-block";
-
-import './item-button.css'
 import { IBExpandedMenu } from "./expanded-menu/expanded-menu";
 
+import './item-button.css'
+
 export function ItemButton({
+    image,
     title,
     subtitle,
-    stages,
-    from,
-    duration,
+    from = false,
     value,
-    image
+    duration,
+    selectable = true,
+    stages,
 }
 ) {
-    const [expand, setExpand] = useState(false)
+    const [expanded, setExpanded] = useState(false)
+    const [selected, setSelected] = useState(stages ? stages.map((stage) => false) : false)
 
     function expansionHandler() {
-        setExpand(!expand)
+        setExpanded(!expanded)
     }
+    function selectionHandler(index) {
+        if (!selectable) return
+        if (isArray(selected)) {
+            const selectedArray = selected
+            selectedArray[index] = !selectedArray[index]
+            setSelected(selectedArray)
+        } else {
+            setSelected(!selected)
+        }
+    }
+
     function hasStages() {
-        return stages == null ? false : true
+        return !(stages == null)
     }
+    function isArray(data) {
+        return Array.isArray(data)
+    }
+
+
 
     return (
         <div className="item-button-group">
-            <div className='item-button'>
-                <IBLeftBlock image={image} title={title} subtitle={subtitle} />
+            <div className={`item-button ${(selected && !isArray(selected)) ? 'terciary-color-background' : 'secondary-color-background'}`}>
+                <IBLeftBlock image={image} title={title} subtitle={subtitle} selected={selected && !isArray(selected)} />
                 <IBRightBlock
                     expansible={hasStages()}
                     from={from}
                     duration={duration}
                     value={value}
                     expansionHandler={expansionHandler}
-                    expanded={expand}
+                    expanded={expanded}
+                    selectionHandler={selectionHandler}
+                    selected={selected}
+                    selectable={selectable}
                 />
             </div>
             {
-                expand ?
-                    <IBExpandedMenu stages={stages} from={from} value={value} duration={duration} />
+                expanded ?
+                    <IBExpandedMenu
+                        stages={stages}
+                        from={from}
+                        value={value}
+                        duration={duration}
+                        selectionHandler={selectionHandler}
+                        selected={selected}
+                    />
                     : null
             }
         </div>

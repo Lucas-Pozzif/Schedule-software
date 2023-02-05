@@ -7,7 +7,8 @@ import './left-block.css';
 export function IBLeftBlock({
     image,
     title,
-    subtitle
+    subtitle,
+    selected
 
 }) {
 
@@ -43,11 +44,11 @@ export function IBLeftBlock({
                 <img className='image' src={image}></img> :
                 null
             }
-            <div className='title-block'>
-                <p className='title-text'>{title}</p>
+            <div className={`title-block`}>
+                <p className={`title-text ${selected?'secondary-color':'terciary-color'}`}>{title}</p>
                 {
                     subtitle ?
-                        <DetailButton text={subtitleHandler(subtitle)}></DetailButton> :
+                        <DetailButton text={subtitleHandler(subtitle)} status={selected}></DetailButton> :
                         null
                 }
             </div>
