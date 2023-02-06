@@ -5,9 +5,12 @@ import { Line } from '../../../../components/line/line'
 
 import './data.css'
 import { configData } from "../../../../data/config-data";
+import { HorizontalIconButton } from "../../../../components/buttons/horizontal-icon-button/horizontal-icon-button";
 
-export function EPData() {
-
+export function EPData({
+    professional
+}) {
+    console.log(professional)
     return (
         <div className="edit-professional-data">
             <Input label={localLanguage.input.editName.label} placeholder={localLanguage.input.editName.placeholder} />
@@ -30,9 +33,18 @@ export function EPData() {
                         placeholder={localLanguage.editProfessional.data.otherOccupation.placeholder}
                     />
                 </div>
-                <div>
-                <Line vertical={true}></Line>
-                <button>Teste</button>
+                <div className="epd-line">
+                    <Line vertical={true} light={true}></Line>
+                </div>
+                <div className="epd-image-block">
+                    {
+                        professional.photo ?
+                            <div className="epd-image">
+                                <img src={professional.photo} />
+                            </div> :
+                            <HorizontalIconButton reverse={true} text={localLanguage.editProfessional.data.addImage} />
+                    }
+
                 </div>
             </div>
         </div>
