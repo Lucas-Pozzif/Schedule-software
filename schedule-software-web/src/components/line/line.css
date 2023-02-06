@@ -1,7 +1,12 @@
-.line{
+.vertical-line{
+    height: calc(100% - 20px);
+    width: 1px;
+    background-color: var(--terciary-color);
+    z-index: 1;
+}
+.horizontal-line{
     height: 1px;
     width: calc(100% - 20px);
     background-color: var(--terciary-color);
-    border-radius: 1px;
     z-index: 1;
 }

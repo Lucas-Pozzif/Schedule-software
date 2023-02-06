@@ -1,10 +1,11 @@
 import './line.css'
 
-export function Line(){
+export function Line({
+    vertical
+}) {
 
-    return(
-        <div className="line">
-
+    return (
+        <div className={`${vertical ? 'vertical-line' : 'horizontal-line'}`}>
         </div>
     )
 }
