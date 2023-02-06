@@ -1,0 +1,15 @@
+.professional-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.pp-search-bar-div{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+.pp-professional-list{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
