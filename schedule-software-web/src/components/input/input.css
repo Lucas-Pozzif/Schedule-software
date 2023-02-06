@@ -1,11 +1,17 @@
+.input-div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .input {
     background-color: var(--secondary-color);
     color: var(--terciary-color);
-    width: calc(100% - 50px);
+    width: calc(100% - 40px);
     height: 40px;
     border-radius: 5px;
     border: none;
-    padding-inline: 10px;
+    margin-inline: 10px;
     font-size: 18px;
 }
 
