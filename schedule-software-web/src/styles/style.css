@@ -15,16 +15,16 @@
     color: var(--terciary-color);
 
 }
-.background{
-    background-color: var(--primary-color);
-    min-width: 100vh;
-    min-height: 100vh;
 
+.background {
+    background-color: var(--primary-color);
+    min-height: 100vh;
 }
 
 div {
     transition: 500ms;
 }
-p{
+
+p {
     font-family: var(--font-family);
 }
