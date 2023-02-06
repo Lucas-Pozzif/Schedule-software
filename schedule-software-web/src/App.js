@@ -3,19 +3,30 @@ import { ItemButton } from "./components/buttons/item-button/item-button";
 import './styles/reset.css';
 import './styles/variables.css';
 import './styles/style.css';
+import { ProfessionalPage } from "./pages/professional/professional-page/professional-page";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
 
 export default function App() {
+
+  const pages = [
+    { path: '/p', element: <ProfessionalPage /> }
+  ]
+
   return (
-    <div className="App">
-      <ItemButton
-        title={"Diego defantus"}
-        subtitle={["Bonito", "Barbudo", "Bilíngue", "Famoso", "Feio", "divertido"]}
-        stages={["Curto", "Médio", "Grande", "Colossal"]}
-        from={true}
-        duration={[45, 46, 47]}
-        value={[44, 45, 46, 47]}
-        image={"https://www.saogoncalo.rj.gov.br/wp-content/uploads/2022/09/Diogo-Defante-foto-Divulgacao.jpeg"}
-      ></ItemButton>
+    <div className="background">
+      <Router>
+        <Routes>
+          {pages.map(page => {
+            return (
+              <Route key={pages.indexOf(page)} path={page.path} element={page.element} ></Route>
+            )
+          })}
+        </Routes>
+      </Router>
     </div>
   );
 }
