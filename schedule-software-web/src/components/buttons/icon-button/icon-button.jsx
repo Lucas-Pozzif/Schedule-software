@@ -1,12 +1,13 @@
 import './icon-button.css'
 
-export function IconButton(parameters) {
-    const iconLink = parameters.iconLink;
-    const text = parameters.text;
+export function IconButton({
+    icon,
+    text
+}) {
 
     return (
         <div className="icon-button">
-            <img src={iconLink} className="icon-button-img"></img>
+            <img src={icon} className="icon-button-img"></img>
             <p className="icon-button-text" >{text}</p>
         </div>
     )
