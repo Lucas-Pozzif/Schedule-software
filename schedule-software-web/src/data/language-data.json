@@ -21,11 +21,35 @@
             }
         },
         "noPreference": "Sem preferência",
-        "search": "Pesquisar",
-        "professionalPage": {
+        "input": {
+            "search": "Pesquisar",
+            "editName": {
+                "label": "Alterar Nome",
+                "placeholder": "Digite seu nome"
+            },
+            "editEmail": {
+                "label": "Alterar Email",
+                "placeholder": "Digite seu email"
+            }
+        },
+        "professionalList": {
             "header": {
                 "title": "Não sabe exatamente quem escolher?",
                 "subtitle": "Deixa que a gente escolhe!"
+            }
+        },
+        "editProfessional": {
+            "tab": {
+                "data": "Informações Pessoais",
+                "services": "Alterar Serviços",
+                "time": "Alterar Horários",
+                "delete": "Excluir Conta"
+            },
+            "data": {
+                "otherOccupation": {
+                    "label": "Não encontrou sua ocupação?",
+                    "placeholder": "Digite a ocupação"
+                }
             }
         }
     }
