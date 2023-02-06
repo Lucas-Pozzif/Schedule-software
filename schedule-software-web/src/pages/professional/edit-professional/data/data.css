@@ -1,0 +1,18 @@
+.edit-professional-data{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.epd-bottom-div{
+    margin-top: 20px;
+    display: flex;
+}
+.epd-occupation-list{
+    display: flex;
+    flex-wrap: wrap;
+}
+.epd-occupation{
+    margin-inline:4px;
+    margin-block: 3px;
+}
