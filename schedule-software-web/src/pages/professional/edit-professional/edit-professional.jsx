@@ -124,7 +124,7 @@ export function EditProfessional() {
         switch (page) {
             case "data":
                 return (
-                    <EPData />
+                    <EPData professional={professional} />
                 );
 
             case "services":
