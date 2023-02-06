@@ -3,25 +3,25 @@ import { ItemButton } from '../../../components/buttons/item-button/item-button'
 import { Input } from '../../../components/input/input'
 import { localLanguage } from '../../../data/language-selector'
 import { professionals } from '../../../data/professional-data'
-import { PPHeader } from './professional-page-header/professional-page-header'
+import { PLHeader } from './professional-list-header/professional-list-header'
 
-import './professional-page.css'
+import './professional-list.css'
 
-export function ProfessionalPage() {
+export function ProfessionalList() {
     const [text, setText] = useState('')
 
     return (
-        <div className="professional-page">
-            <PPHeader />
-            <div className='pp-search-bar-div'>
-                <Input placeholder={localLanguage.search} label="temporary label" value={text} setValue={setText} />
+        <div className="professional-list-page">
+            <PLHeader />
+            <div className='pl-search-bar-div'>
+                <Input placeholder={localLanguage.input.search} value={text} setValue={setText} />
             </div>
-            <div className='pp-professional-list'>
+            <div className='pl-professional-list'>
                 {
                     professionals.map((prof) => {
                         if (prof.name.toLowerCase().includes(text.toLowerCase())) {
                             return (
-                                <ItemButton image={prof.photo} title={prof.name} subtitle={prof.occupation} />
+                                <ItemButton image={prof.photo} title={prof.name} subtitle={prof.occupations} />
                             )
                         }
                     })

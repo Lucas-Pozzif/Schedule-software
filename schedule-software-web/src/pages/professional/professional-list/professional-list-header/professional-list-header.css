@@ -1,21 +1,21 @@
-.professional-page-header{
+.professional-list-header{
     display: flex;
     width: calc(100% - 20px);
     padding-top: 20px;
 }
-.pp-header-right-block{
+.pl-header-right-block{
     width: 100%;
 }
-.pp-header-title{
+.pl-header-title{
     color: #EAE0D5;
     font-size: 22px;
     width: 220px;
 }
-.pp-header-subtitle-block{
+.pl-header-subtitle-block{
     display: flex;
     justify-content: space-between;
 }
-.pp-header-subtitle{
+.pl-header-subtitle{
     color: var(--secondary-color);
     font-size: 14px;
     padding-top: 2px;

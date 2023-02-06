@@ -3,17 +3,15 @@ import { ItemButton } from "./components/buttons/item-button/item-button";
 import './styles/reset.css';
 import './styles/variables.css';
 import './styles/style.css';
-import { ProfessionalPage } from "./pages/professional/professional-page/professional-page";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
+import { ProfessionalList } from "./pages/professional/professional-list/professional-list";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { EditProfessional } from "./pages/professional/edit-professional/edit-professional";
 
 export default function App() {
 
   const pages = [
-    { path: '/p', element: <ProfessionalPage /> }
+    { path: '/p', element: <ProfessionalList /> },
+    { path: '/p/edit', element: <EditProfessional />}
   ]
 
   return (

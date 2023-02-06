@@ -2,16 +2,16 @@ import { SmallButton } from "../../../../components/buttons/small-button/small-b
 import { ReturnButton } from "../../../../components/buttons/return-button/return-button";
 import { localLanguage } from "../../../../data/language-selector";
 
-import './professional-page-header.css'
+import './professional-list-header.css'
 
-export function PPHeader() {
+export function PLHeader() {
     return (
-        <div className="professional-page-header">
+        <div className="professional-list-header">
             <ReturnButton light={true} size={48} />
-            <div className='pp-header-right-block'>
-                <p className='pp-header-title'>{localLanguage.professionalPage.header.title}</p>
-                <div className="pp-header-subtitle-block">
-                    <p className="pp-header-subtitle">{localLanguage.professionalPage.header.subtitle}</p>
+            <div className='pl-header-right-block'>
+                <p className='pl-header-title'>{localLanguage.professionalList.header.title}</p>
+                <div className="pl-header-subtitle-block">
+                    <p className="pl-header-subtitle">{localLanguage.professionalList.header.subtitle}</p>
                     <SmallButton text={localLanguage.noPreference} />
                 </div>
             </div>
