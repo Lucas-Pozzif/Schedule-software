@@ -1,0 +1,24 @@
+.horizontal-icon-button{
+    width: 140px;
+    height: 40px;
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+    gap: 10px;
+    padding-inline: 6px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.horizontal-icon-button-img{
+    width: 32px;
+    height: 32px;
+}
+.horizontal-icon-button-text{
+    text-align: center;
+    color: var(--terciary-color);
+    font-size: 12px;
+}
+.reverse{
+    flex-direction: row-reverse;
+}
