@@ -1,6 +1,6 @@
-import { defaultRange } from "../../data/default-data";
+import { configData } from "../../data/data management/database-management"
 
-export function timeFormatter(duration, range = defaultRange) {
+export function timeFormatter(duration, range = configData.data.timeRange) {
     if (duration === undefined) { return (''); }
 
     const minMinutes = (duration - range) % 60;

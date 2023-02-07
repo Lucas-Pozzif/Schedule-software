@@ -1,4 +1,4 @@
-import { localLanguage } from "../../../../data/language-selector";
+import { langData } from "../../../../data/data management/database-management";
 import { timeFormatter } from "../../../../functions/time-formatter/time-formatter";
 
 import './right-block.css';
@@ -18,10 +18,10 @@ export function IBRightBlock({
         return Array.isArray(data) ? data[0] : data
     }
     function seeMessageHandler() {
-        return expanded ? localLanguage.see.less : localLanguage.see.more
+        return expanded ? langData.see.less : langData.see.more
     }
     function selectStateHandler() {
-        return selected ? localLanguage.selected.masculine.singular : localLanguage.select
+        return selected ? langData.selected.masculine.singular : langData.select
     }
 
     function checkSelected() {
@@ -31,8 +31,8 @@ export function IBRightBlock({
                 null :
                 `
                     ${count} ${count == 1 ?
-                    `${localLanguage.selected.masculine.singular}` :
-                    `${localLanguage.selected.masculine.plural}`}
+                    `${langData.selected.masculine.singular}` :
+                    `${langData.selected.masculine.plural}`}
                     `:
             null
     }
@@ -55,7 +55,7 @@ export function IBRightBlock({
                     <div className={`right-block`}>
                         {
                             from ?
-                                <p className={`from-text ${selected ? 'secondary-color' : 'terciary-color'}`}>{localLanguage.fromText}</p> :
+                                <p className={`from-text ${selected ? 'secondary-color' : 'terciary-color'}`}>{langData.fromText}</p> :
                                 null
                         }
                         <div className={`value-block`}>

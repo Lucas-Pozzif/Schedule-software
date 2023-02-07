@@ -1,6 +1,6 @@
 import { SmallButton } from "../../../../components/buttons/small-button/small-button";
 import { ItemButton } from "../../../../components/buttons/item-button/item-button";
-import { localLanguage } from "../../../../data/language-selector";
+import { langData } from "../../../../data/data management/database-management";
 
 import { useNavigate } from "react-router-dom";
 
@@ -26,13 +26,13 @@ export function EPDelete({
     return (
         <div className="professional-edit-delete">
             <div className="epd-header">
-                <p className="epd-title">{localLanguage.editProfessional.delete.title}</p>
+                <p className="epd-title">{langData.editProfessional.delete.title}</p>
                 <div className="epd-subtitle-block">
-                    <p className="epd-subtitle">{localLanguage.editProfessional.delete.subtitle}</p>
+                    <p className="epd-subtitle">{langData.editProfessional.delete.subtitle}</p>
                     <div onClick={() => {
                         deleteProfessional()
                     }}>
-                        <SmallButton light={true} text={localLanguage.editProfessional.delete.buttonText}></SmallButton>
+                        <SmallButton light={true} text={langData.editProfessional.delete.buttonText}></SmallButton>
                     </div>
                 </div>
             </div>

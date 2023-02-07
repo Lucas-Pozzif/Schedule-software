@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { localLanguage } from "../../../../data/language-selector";
+import { langData } from "../../../../data/data management/database-management";
 import { timeFormatter } from "../../../../functions/time-formatter/time-formatter";
 
 import './expanded-item.css'
@@ -27,7 +27,7 @@ export function IBExpandedItem(
             <div className={`right-block`}>
                 {
                     from ?
-                        <p className={`from-text ${localSelected ? 'secondary-color' : 'terciary-color'}`}>{localLanguage.fromText}</p> :
+                        <p className={`from-text ${localSelected ? 'secondary-color' : 'terciary-color'}`}>{langData.fromText}</p> :
                         null
                 }
                 <div className={`value-block`}>

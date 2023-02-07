@@ -1,11 +1,12 @@
-import { timeData } from "../../../../data/default-data"
+import { useState } from "react";
+
 import { ItemButton } from "../../../../components/buttons/item-button/item-button"
-import { professionals } from "../../../../data/professional-data"
 import { SmallButton } from "../../../../components/buttons/small-button/small-button";
 
+import { profData } from "../../../../data/data management/database-management";
+import { timeData } from "../../../../data/generic-data";
 
 import './time.css'
-import { useState } from "react";
 
 export function EPTime(
     {
@@ -49,7 +50,7 @@ export function EPTime(
                 function getOthers() {
                     const names = []
 
-                    professionals.map(prof => {
+                    profData.map(prof => {
                         if (prof.time[timeData.indexOf(individualTime)]) {
                             names.push(prof.name)
                         }

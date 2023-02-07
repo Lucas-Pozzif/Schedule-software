@@ -1,4 +1,4 @@
-import { localLanguage } from "../../data/language-selector";
+import { langData } from "../../data/data management/database-management";
 
 export function subtitleHandler(subtitle) {
     const listLength = subtitle.length
@@ -10,10 +10,10 @@ export function subtitleHandler(subtitle) {
     var textValue = subtitleData.join(', ')
 
     if (subtitleData.length != listLength) {
-        var other = localLanguage.other.plural;
+        var other = langData.other.plural;
 
         if (listLength - subtitleData.length == 1) {
-            other = localLanguage.other.singular
+            other = langData.other.singular
         }
 
         textValue = `${textValue} & ${listLength - subtitleData.length} ${other}`

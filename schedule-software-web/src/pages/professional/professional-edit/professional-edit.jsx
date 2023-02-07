@@ -3,15 +3,14 @@ import { useState } from 'react'
 import { HeaderButton } from '../../../components/buttons/header-button/header-button'
 import { IconButton } from '../../../components/buttons/icon-button/icon-button'
 import { LargeButton } from '../../../components/buttons/large-button/large-button'
-import { localLanguage } from '../../../data/language-selector'
-import { professionals } from '../../../data/professional-data'
+import { langData } from '../../../data/data management/database-management'
 import { EPData } from './data/data'
 import { EPDelete } from './delete/delete'
 
 import './professional-edit.css'
 import { EPTime } from './time/time'
 
-export function EditProfessional() {
+export function ProfessionalEdit() {
 
     const [professional, setProfessional] = useState({
         "email": "lucaspozzif20@gmail.com",
@@ -205,21 +204,21 @@ export function EditProfessional() {
             <HeaderButton title={professional.name} subtitle={professional.occupations} image={professional.photo} />
             <div className='ep-tabs'>
                 <div onClick={() => { changePage('data') }}>
-                    <IconButton icon={""} text={localLanguage.editProfessional.tab.data} />
+                    <IconButton icon={""} text={langData.editProfessional.tab.data} />
                 </div>
                 <div onClick={() => { changePage('services') }}>
-                    <IconButton icon={""} text={localLanguage.editProfessional.tab.services} />
+                    <IconButton icon={""} text={langData.editProfessional.tab.services} />
                 </div>
                 <div onClick={() => { changePage('time') }}>
-                    <IconButton icon={""} text={localLanguage.editProfessional.tab.time} />
+                    <IconButton icon={""} text={langData.editProfessional.tab.time} />
                 </div>
                 <div onClick={() => { changePage('delete') }}>
-                    <IconButton icon={""} text={localLanguage.editProfessional.tab.delete} />
+                    <IconButton icon={""} text={langData.editProfessional.tab.delete} />
                 </div>
             </div>
             {pageContent(page)}
             <div onClick={() => { saveProfessional(editedProfessional) }} className='ep-large-button'>
-                <LargeButton hide={isSaved()} text={localLanguage.save} />
+                <LargeButton hide={isSaved()} text={langData.save} />
             </div>
         </div>
     )
