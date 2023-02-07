@@ -39,7 +39,7 @@ export function EPData({
     }
 
     return (
-        <div className="edit-professional-data">
+        <div className="professional-edit-data">
             <Input
                 label={localLanguage.input.editName.label}
                 placeholder={localLanguage.input.editName.placeholder}

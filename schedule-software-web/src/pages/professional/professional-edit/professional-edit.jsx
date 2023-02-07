@@ -8,7 +8,7 @@ import { professionals } from '../../../data/professional-data'
 import { EPData } from './data/data'
 import { EPDelete } from './delete/delete'
 
-import './edit-professional.css'
+import './professional-edit.css'
 import { EPTime } from './time/time'
 
 export function EditProfessional() {
@@ -201,7 +201,7 @@ export function EditProfessional() {
     }
 
     return (
-        <div className="edit-professional-page">
+        <div className="professional-edit-page">
             <HeaderButton title={professional.name} subtitle={professional.occupations} image={professional.photo} />
             <div className='ep-tabs'>
                 <div onClick={() => { changePage('data') }}>

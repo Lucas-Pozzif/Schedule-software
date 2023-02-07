@@ -24,7 +24,7 @@ export function EPDelete({
     }
 
     return (
-        <div className="edit-professional-delete">
+        <div className="professional-edit-delete">
             <div className="epd-header">
                 <p className="epd-title">{localLanguage.editProfessional.delete.title}</p>
                 <div className="epd-subtitle-block">
