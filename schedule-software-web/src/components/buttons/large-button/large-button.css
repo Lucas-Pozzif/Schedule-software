@@ -6,9 +6,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position:fixed;
+    bottom: 20px;
 }
 
 .large-button-text {
     font-size: 34px;
     color: var(--terciary-color);
+}
+.hide{
+    bottom: -50px;
 }
