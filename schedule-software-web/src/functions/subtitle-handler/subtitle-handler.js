@@ -5,7 +5,7 @@ export function subtitleHandler(subtitle) {
     var subtitleData = subtitle
 
     while (subtitleData.length > 3) {
-        subtitleData = subtitleData.slice(0,3)
+        subtitleData = subtitleData.slice(0,2)
     }
     var textValue = subtitleData.join(', ')
 
