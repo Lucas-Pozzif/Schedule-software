@@ -62,7 +62,7 @@ export function EPData({
                                 const light = !occupations.includes(occupation);
 
                                 return (
-                                    <div className="epd-occupation" onClick={() => {
+                                    <div key={occupation} className="epd-occupation" onClick={() => {
                                         if (occupations.includes(occupation)) {
                                             setOccupations(occupations.filter(item => item != occupation))
 
