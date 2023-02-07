@@ -4,13 +4,16 @@ import { HeaderButton } from '../../../components/buttons/header-button/header-b
 import { IconButton } from '../../../components/buttons/icon-button/icon-button'
 import { LargeButton } from '../../../components/buttons/large-button/large-button'
 import { localLanguage } from '../../../data/language-selector'
+import { professionals } from '../../../data/professional-data'
 import { EPData } from './data/data'
+import { EPDelete } from './delete/delete'
 
 import './edit-professional.css'
+import { EPTime } from './time/time'
 
 export function EditProfessional() {
 
-    const professional = {
+    const [professional, setProfessional] = useState({
         "email": "lucaspozzif20@gmail.com",
         "name": "Lucas Pozzi",
         "photo": "https://upload.wikimedia.org/wikipedia/pt/d/de/Taylor_swift_me.jpg",
@@ -23,106 +26,109 @@ export function EditProfessional() {
         ],
         "services": [],
         "time": [
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
         ],
         "chat": null
     }
+
+    )
     const [page, setPage] = useState('data')
+    const [saved, setSaved] = useState(true)
 
     //All the usestates below are related to the professional data
     const [email, setEmail] = useState(professional.email);
@@ -144,6 +150,20 @@ export function EditProfessional() {
     }
 
 
+    function saveProfessional() {
+        setSaved(true);
+        setProfessional(editedProfessional)
+    }
+
+    function isSaved() {
+        if (saved != _.isEqual(editedProfessional, professional)) {
+            setSaved(_.isEqual(editedProfessional, professional));
+        }
+        return saved
+    }
+    function changePage(newPage) {
+        setPage(newPage);
+    }
     function pageContent(page) {
         switch (page) {
             case "data":
@@ -167,21 +187,17 @@ export function EditProfessional() {
                 );
             case "time":
                 return (
-                    <p>Time</p>
+                    <EPTime time={time} setTime={setTime} />
                 );
             case "delete":
                 return (
-                    <p>Noooo</p>
+                    <EPDelete professional={professional} setProfessional={setProfessional} setPage={setPage} />
                 )
             default:
                 return (
                     <p>Lost</p>
                 )
         }
-    }
-
-    function changePage(newPage) {
-        setPage(newPage);
     }
 
     return (
@@ -202,7 +218,9 @@ export function EditProfessional() {
                 </div>
             </div>
             {pageContent(page)}
-            <LargeButton hide={_.isEqual(editedProfessional, professional)} text={localLanguage.save} />
+            <div onClick={() => { saveProfessional(editedProfessional) }} className='ep-large-button'>
+                <LargeButton hide={isSaved()} text={localLanguage.save} />
+            </div>
         </div>
     )
 }
