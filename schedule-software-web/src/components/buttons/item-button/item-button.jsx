@@ -14,22 +14,28 @@ export function ItemButton({
     duration,
     selectable = true,
     stages,
+
+    selected,
+    setSelected
 }
 ) {
     const [expanded, setExpanded] = useState(false)
-    const [selected, setSelected] = useState(stages ? stages.map((stage) => false) : false)
 
     function expansionHandler() {
         setExpanded(!expanded)
     }
     function selectionHandler(index) {
-        if (!selectable) return
-        if (isArray(selected)) {
-            const selectedArray = selected
-            selectedArray[index] = !selectedArray[index]
-            setSelected(selectedArray)
-        } else {
-            setSelected(!selected)
+        try {
+            if (!selectable) return
+            if (isArray(selected)) {
+                const selectedArray = selected
+                selectedArray[index] = !selectedArray[index]
+                setSelected(selectedArray)
+            } else {
+                setSelected(!selected)
+            }
+        } catch {
+
         }
     }
 
