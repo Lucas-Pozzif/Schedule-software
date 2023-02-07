@@ -6,6 +6,9 @@
     width: 100%;
     margin-top: 20px;
 }
+.visible-error{
+    margin-bottom: 15px;
+}
 
 .input-label {
     display: inline-flex;
@@ -27,6 +30,13 @@
     padding-inline: 10px;
     border: none;
     border-radius: 5px;
+}
+.error{
+    color: #C6AC8F;
+    position: absolute;
+    bottom: -16px;
+    left: 20px;
+    font-size: 12px;
 }
 
 ::placeholder {

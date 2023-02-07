@@ -1,4 +1,5 @@
 
+import { useState } from 'react';
 import './input.css'
 
 export function Input
@@ -6,16 +7,32 @@ export function Input
         label,
         placeholder,
         value,
-        setValue
-
+        setValue,
+        errorMessage
     }) {
+    const [touched, setTouched] = useState(false)
 
     return (
-        <div className='input-div'>
-            <label className='input-label'>
+        <div className={`input-div ${(touched && errorMessage)? 'visible-error':null}`}>
+            <p className='input-label'>
                 {label}
-            </label>
-            <input className="input" placeholder={placeholder} value={value} onChange={(value) => setValue(value.target.value)}></input>
+            </p>
+            <input
+                onFocus={(e) => {
+                    if (!touched) {
+                        setTouched(true);
+                    }
+                }}
+                className="input"
+                placeholder={placeholder}
+                value={value}
+                onChange={(value) => { try { setValue(value.target.value); } catch (e) { } }}
+            ></input>
+            <p className='error'>{
+                touched ?
+                    errorMessage :
+                    null
+            }</p>
         </div>
     )
 
