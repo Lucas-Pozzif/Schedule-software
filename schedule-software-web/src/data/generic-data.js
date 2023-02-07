@@ -1,4 +1,3 @@
-const defaultRange = 5;
 
 function generateTimeValues() {
     const time = [];
@@ -21,4 +20,4 @@ function generateTimeValues() {
 const time = generateTimeValues()
 
 
-export { defaultRange, time as timeData }
+export {time as timeData }
