@@ -1,10 +1,13 @@
 import './small-button.css'
 
-export function SmallButton(parameters) {
-    const text = parameters.text
+export function SmallButton({
+    text,
+    light,
+    fontsize
+}) {
     return (
-        <div className='small-button'>
-            <p className='small-button-text'>{text}</p>
+        <div className={`small-button ${light ? 'secondary-color-background' : 'terciary-color-background'}`}>
+            <p style={{ fontSize: fontsize + 'px' }} className={`small-button-text ${!light ? 'secondary-color' : 'terciary-color'}`}>{text}</p>
         </div>
     )
 }

@@ -2,12 +2,11 @@
     height: 30px;
     width: 150px;
     border-radius: 5px;
-    background-color: var(--secondary-color);
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.small-button-text{
+
+.small-button-text {
     font-size: 18px;
-    color: var(--terciary-color);
 }
