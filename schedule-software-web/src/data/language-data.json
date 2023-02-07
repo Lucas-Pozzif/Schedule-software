@@ -52,6 +52,11 @@
                     "placeholder": "Digite a ocupação"
                 },
                 "addImage": "Adiconar Imagem"
+            },
+            "delete":{
+                "title":"Tem certeza que deseja excluir esse perfil?",
+                "subtitle":"Essa ação é irreversível!",
+                "buttonText":"Excluir Perfil"
             }
         },
         "error": {
