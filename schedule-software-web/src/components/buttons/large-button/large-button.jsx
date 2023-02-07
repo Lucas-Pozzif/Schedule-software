@@ -5,8 +5,10 @@ export function LargeButton({
     hide
 }) {
     return (
-        <div className={`large-button ${hide?'hide':null}`}>
-            <p className='large-button-text'>{text}</p>
-        </div>
+        <div className={`large-button-overlap ${hide ? 'hide' : null}`}>
+            <div className={`large-button`}>
+                <p className='large-button-text'>{text}</p>
+            </div>
+        </div >
     )
 }
