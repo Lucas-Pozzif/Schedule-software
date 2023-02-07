@@ -1,13 +1,14 @@
+import _ from 'lodash'
 import { useState } from 'react'
 import { HeaderButton } from '../../../components/buttons/header-button/header-button'
 import { IconButton } from '../../../components/buttons/icon-button/icon-button'
+import { LargeButton } from '../../../components/buttons/large-button/large-button'
 import { localLanguage } from '../../../data/language-selector'
 import { EPData } from './data/data'
 
 import './edit-professional.css'
 
 export function EditProfessional() {
-    const [page, setPage] = useState('data')
 
     const professional = {
         "email": "lucaspozzif20@gmail.com",
@@ -17,8 +18,10 @@ export function EditProfessional() {
         "occupations": [
             "peter",
             "ficker",
-            "spfder man"
+            "spfder man",
+            "Cabeleireiro"
         ],
+        "services": [],
         "time": [
             true,
             true,
@@ -119,12 +122,43 @@ export function EditProfessional() {
         ],
         "chat": null
     }
+    const [page, setPage] = useState('data')
+
+    //All the usestates below are related to the professional data
+    const [email, setEmail] = useState(professional.email);
+    const [name, setName] = useState(professional.name);
+    const [photo, setphoto] = useState(professional.photo);
+    const [occupations, setOccupations] = useState(professional.occupations);
+    const [services, setServices] = useState(professional.services);
+    const [time, setTime] = useState(professional.time);
+
+    const editedProfessional = {
+        email: email,
+        name: name,
+        photo: photo,
+        schedule: professional.schedule,
+        occupations: occupations,
+        services: services,
+        time: time,
+        chat: professional.chat
+    }
+
 
     function pageContent(page) {
         switch (page) {
             case "data":
                 return (
-                    <EPData professional={professional} />
+                    <EPData
+                        email={email}
+                        name={name}
+                        photo={photo}
+                        occupations={occupations}
+
+                        setEmail={setEmail}
+                        setName={setName}
+                        setPhoto={setphoto}
+                        setOccupations={setOccupations}
+                    />
                 );
 
             case "services":
@@ -168,6 +202,7 @@ export function EditProfessional() {
                 </div>
             </div>
             {pageContent(page)}
+            <LargeButton hide={_.isEqual(editedProfessional, professional)} text={localLanguage.save} />
         </div>
     )
 }
