@@ -1,5 +1,6 @@
 {
     "ptBr": {
+        "save": "Salvar",
         "fromText": "A partir de",
         "other": {
             "singular": "outro",
@@ -50,8 +51,12 @@
                     "label": "Não encontrou sua ocupação?",
                     "placeholder": "Digite a ocupação"
                 },
-                "addImage":"Adiconar Imagem"
+                "addImage": "Adiconar Imagem"
             }
+        },
+        "error": {
+            "cantBeEmpty": "Preencha o campo.",
+            "alreadyExists": "O item já existe."
         }
     }
 }
