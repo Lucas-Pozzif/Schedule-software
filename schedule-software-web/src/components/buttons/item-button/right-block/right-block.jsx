@@ -4,7 +4,6 @@ import { timeFormatter } from "../../../../functions/time-formatter/time-formatt
 import "./right-block.css";
 
 function Selected({ selected, expanded }) {
-  debugger;
   const selectedItems = selected.filter(Boolean).length;
 
   const displayMessage =
@@ -14,7 +13,7 @@ function Selected({ selected, expanded }) {
         : `${selectedItems} ${selectedItems == 1 ? `${langData.selected.masculine.singular}` : `${langData.selected.masculine.plural}`}
       `
       : null;
-  return <p>{displayMessage}</p>;
+  return <p className={`selection-text terciary-color`}>{displayMessage}</p>;
 }
 function From({ from, selected }) {
   return <>{from ? <p className={`from-text ${selected ? "secondary-color" : "terciary-color"}`}>{langData.fromText}</p> : null}</>;

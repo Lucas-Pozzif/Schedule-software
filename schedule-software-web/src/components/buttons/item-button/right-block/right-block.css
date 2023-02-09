@@ -35,3 +35,9 @@
     font-family: var(--font-family);
     color: var(--terciary-color);
 }
+
+.selection-text{
+    font-size: 10px;
+    font-family: var(--font-family);
+    color: var(--terciary-color);
+}

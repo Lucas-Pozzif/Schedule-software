@@ -10,20 +10,22 @@ export function IBExpandedMenu(
         from,
         value,
         duration,
-        selectionHandler,
-        selected
+        selected,
+        setSelected
     }
 ) {
 
     function makeItStagesSize(data) {
+        const isArray = Array.isArray(data);
+        const isStagesSize = data.length == stages.length
+
         var dataArray = []
-        if (Array.isArray(data) && data.length == stages.length) return data
-        for (let stageSize = 0; stageSize < stages.length; stageSize++) {
-            dataArray.push(data)
-        }
+        //If it is already the same size of the stages, then just return it
+        if (isArray && isStagesSize) return data
+
+        stages.map(() => dataArray.push(data))
         return (dataArray)
     }
-    console.log(selected)
 
     const valueArray = makeItStagesSize(value);
     const durationArray = Array.isArray(duration) ? duration : makeItStagesSize(duration);
@@ -42,12 +44,14 @@ export function IBExpandedMenu(
                             <IBExpandedItem
                                 index={index}
                                 maxIndex={stages.length - 1}
+
                                 stage={stage}
                                 from={from}
-                                value={value[index]}
+                                value={valueArray[index]}
                                 duration={duration[index]}
-                                selectionHandler={selectionHandler}
-                                selected={selected[index]}
+
+                                selected={selected}
+                                setSelected={setSelected}
                             />
                         </React.Fragment>
                     )
