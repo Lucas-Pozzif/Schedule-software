@@ -6,12 +6,14 @@ import './styles/style.css';
 import { ProfessionalList } from "./pages/professional/professional-list/professional-list";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ProfessionalEdit } from "./pages/professional/professional-edit/professional-edit";
+import { ServiceList } from "./pages/service/service-list/service-list";
 
 export default function App() {
 
   const pages = [
     { path: '/p', element: <ProfessionalList /> },
-    { path: '/p/edit', element: <ProfessionalEdit /> }
+    { path: '/p/edit', element: <ProfessionalEdit /> },
+    { path: '/s', element: <ServiceList /> }
   ]
 
 return (

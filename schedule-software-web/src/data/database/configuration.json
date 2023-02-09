@@ -6,12 +6,6 @@
   "paid": "timestamp",
   "data": {
     "timeRange": 5,
-    "occupations": [
-      "Cabeleireiro",
-      "Escovista",
-      "Barbeiro",
-      "Manicure",
-      "Designer de Sobrancelhas"
-    ]
+    "occupations": ["Cabeleireiro", "Escovista", "Barbeiro", "Manicure", "Designer de Sobrancelhas"]
   }
 }
