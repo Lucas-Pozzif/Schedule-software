@@ -1,76 +1,77 @@
 import { langData } from "../../../../data/data management/database-management";
 import { timeFormatter } from "../../../../functions/time-formatter/time-formatter";
 
-import './right-block.css';
+import "./right-block.css";
 
-export function IBRightBlock({
-    expansible,
-    from,
-    duration,
-    value,
-    expansionHandler,
-    expanded,
-    selectionHandler,
-    selected,
-    selectable
-}) {
-    function numberData(data) {
-        return Array.isArray(data) ? data[0] : data
-    }
-    function seeMessageHandler() {
-        return expanded ? langData.see.less : langData.see.more
-    }
-    function selectStateHandler() {
-        return selected ? langData.selected.masculine.singular : langData.select
-    }
+function Selected({ selected, expanded }) {
+  debugger;
+  const selectedItems = selected.filter(Boolean).length;
 
-    function checkSelected() {
-        const count = selected.filter(Boolean).length
-        return count > 0 ?
-            expanded ?
-                null :
-                `
-                    ${count} ${count == 1 ?
-                    `${langData.selected.masculine.singular}` :
-                    `${langData.selected.masculine.plural}`}
-                    `:
-            null
-    }
-
-    return (
-        <>
-            {
-                expansible ?
-                    <div className={`right-block`}>
-                        <div className={`value-block`}>
-                            <div className={`value-button terciary-color-background`} onClick={() => {
-                                expansionHandler()
-                            }}>
-                                <p className={`value-text`}>{seeMessageHandler()}</p>
-                            </div>
-                            <p className={`duration-text`}>{checkSelected()}</p>
-                        </div>
-                    </div>
-                    :
-                    <div className={`right-block`}>
-                        {
-                            from ?
-                                <p className={`from-text ${selected ? 'secondary-color' : 'terciary-color'}`}>{langData.fromText}</p> :
-                                null
-                        }
-                        <div className={`value-block`}>
-                            <div className={`value-button ${selected ? 'secondary-color-background' : 'terciary-color-background'}`} onClick={() => { selectionHandler() }}>
-                                <p className={`value-text ${selected ? 'terciary-color' : 'secondary-color'}`}>{
-                                    value ?
-                                        numberData(value) :
-                                        selectStateHandler()
-                                }</p>
-                            </div>
-                            <p className={`duration-text ${selected ? 'secondary-color' : 'terciary-color'}`}>{timeFormatter(numberData(duration))}</p>
-                        </div>
-                    </div>
-            }
-        </>
-
-    )
+  const displayMessage =
+    selectedItems > 0
+      ? expanded
+        ? null
+        : `${selectedItems} ${selectedItems == 1 ? `${langData.selected.masculine.singular}` : `${langData.selected.masculine.plural}`}
+      `
+      : null;
+  return <p>{displayMessage}</p>;
 }
+function From({ from, selected }) {
+  return <>{from ? <p className={`from-text ${selected ? "secondary-color" : "terciary-color"}`}>{langData.fromText}</p> : null}</>;
+}
+function ValueButton({ value, selected }) {
+  const displayValue = value ? value : selected ? langData.selected.masculine.singular : langData.select;
+  return (
+    <div className={`value-button ${selected ? "secondary-color-background" : "terciary-color-background"}`}>
+      <p className={`value-text ${selected ? "terciary-color" : "secondary-color"}`}>{displayValue}</p>
+    </div>
+  );
+}
+function Duration({ duration, selected }) {
+  const durationRange = timeFormatter(duration);
+  return <p className={`duration-text ${selected ? "secondary-color" : "terciary-color"}`}>{durationRange}</p>;
+}
+
+function ExpansibleBlock({ expanded, setExpanded, selected }) {
+  const value = expanded ? langData.see.less : langData.see.more;
+  return (
+    <div className={`right-block`}>
+      <div
+        className={`value-block`}
+        onClick={() => {
+          setExpanded(!expanded);
+        }}>
+        <ValueButton value={value} />
+        <Selected selected={selected} expanded={expanded} />
+      </div>
+    </div>
+  );
+}
+function UnexpansibleBlock({ from, value, duration, selected, setSelected }) {
+  return (
+    <div className={`right-block`}>
+      <From from={from} selected={selected} />
+      <div
+        className={`value-block`}
+        onClick={() => {
+          setSelected(!selected);
+        }}>
+        <ValueButton value={value} selected={selected} />
+        <Duration duration={duration} selected={selected} />
+      </div>
+    </div>
+  );
+}
+
+function IBRightBlock({ from, value, duration, isExpansible, expanded, setExpanded, selected, setSelected }) {
+  return (
+    <>
+      {isExpansible ? (
+        <ExpansibleBlock expanded={expanded} setExpanded={setExpanded} selected={selected} />
+      ) : (
+        <UnexpansibleBlock from={from} value={value} duration={duration} selected={selected} setSelected={setSelected} />
+      )}
+    </>
+  );
+}
+export { IBRightBlock };

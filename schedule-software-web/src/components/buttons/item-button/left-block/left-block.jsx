@@ -4,23 +4,44 @@ import { DetailButton } from "../../detail-button/detail-button";
 
 import "./left-block.css";
 
-export function IBLeftBlock({ image, title, subtitle, selected }) {
+function Image({ image }) {
+  return <>{image ? <img className='image' src={image}></img> : null}</>;
+}
+
+function Title({ title, selected }) {
   return (
-    <div className="left-block">
-      {image ? <img className="image" src={image}></img> : null}
+    <>
+      <p
+        className={`title-text ${
+          selected ? "secondary-color" : "terciary-color"
+        }`}>
+        {title}
+      </p>
+    </>
+  );
+}
+
+function Subtitle({ subtitle, selected }) {
+  return (
+    <>
+      {subtitle ? (
+        <DetailButton
+          text={subtitleHandler(subtitle)}
+          status={selected}></DetailButton>
+      ) : null}
+    </>
+  );
+}
+
+function IBLeftBlock({ image, title, subtitle, selected }) {
+  return (
+    <div className='left-block'>
+      <Image image={image} />
       <div className={`title-block`}>
-        <p
-          className={`title-text ${
-            selected ? "secondary-color" : "terciary-color"
-          }`}>
-          {title}
-        </p>
-        {subtitle ? (
-          <DetailButton
-            text={subtitleHandler(subtitle)}
-            status={selected}></DetailButton>
-        ) : null}
+        <Title title={title} selected={selected} />
+        <Subtitle subtitle={subtitle} selected={selected} />
       </div>
     </div>
   );
 }
+export {IBLeftBlock}

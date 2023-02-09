@@ -1,5 +1,6 @@
 .item-button-group{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     margin-block: 5px;
 }
