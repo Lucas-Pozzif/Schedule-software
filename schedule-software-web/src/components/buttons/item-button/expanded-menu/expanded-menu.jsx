@@ -48,7 +48,7 @@ export function IBExpandedMenu(
                                 stage={stage}
                                 from={from}
                                 value={valueArray[index]}
-                                duration={duration[index]}
+                                duration={durationArray[index]}
 
                                 selected={selected}
                                 setSelected={setSelected}
