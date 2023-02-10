@@ -53,7 +53,9 @@ function UnexpansibleBlock({ from, value, duration, selected, setSelected }) {
       <div
         className={`value-block`}
         onClick={() => {
-          setSelected(!selected);
+          try {
+            setSelected(!selected);
+          } catch {}
         }}>
         <ValueButton value={value} selected={selected} />
         <Duration duration={duration} selected={selected} />

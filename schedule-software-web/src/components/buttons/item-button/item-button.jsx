@@ -19,6 +19,7 @@ export function ItemButton({
 }) {
   const [expanded, setExpanded] = useState(false);
 
+  
   function isArray(data) {
     return Array.isArray(data);
   }
@@ -40,7 +41,7 @@ export function ItemButton({
           from={from}
           value={value}
           duration={duration}
-          isExpansible={isArray(selected)}
+          isExpansible={isArray(stages)}
           expanded={expanded}
           setExpanded={setExpanded}
           selected={selected}
