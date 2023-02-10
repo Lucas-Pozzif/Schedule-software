@@ -1,5 +1,8 @@
 [
   {
+    
+    
+    "id":0,
     "name": "Escova",
     "value": [25, 33, 49],
     "time": [
@@ -12,6 +15,8 @@
     "stages": ["Curto", "Médio", "Longo"]
   },
   {
+    
+    "id":1,
     "name": "Escova",
     "value": [25, 33, 49],
     "time": [
@@ -24,6 +29,8 @@
     "stages": ["Curto", "Médio", "Longo"]
   },
   {
+    
+    "id":2,
     "name": "Escova",
     "value": [25, 33, 49],
     "time": [
@@ -36,6 +43,8 @@
     "stages": ["Curto", "Médio", "Longo"]
   },
   {
+    
+    "id":3,
     "name": "Escova",
     "value": [25, 33, 49],
     "time": [
@@ -48,8 +57,10 @@
     "stages": ["Curto", "Médio", "Longo"]
   },
   {
+    
+    "id":4,
     "name": "Escova",
-    "value": [25, 33, 49],
+    "value": [25, 33],
     "time": [
       [true, true, true, false, true, true],
       [true, true, true, false, true, true, true, true],
@@ -57,9 +68,11 @@
     ],
     "from": true,
     "photo": null,
-    "stages": ["Curto", "Médio", "Longo"]
+    "stages": ["Curto", "Médio"]
   },
   {
+    
+    "id":5,
     "name": "Escova",
     "value": [25, 33, 49],
     "time": [
