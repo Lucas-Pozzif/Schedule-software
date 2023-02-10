@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { ItemButton } from "../../../components/buttons/item-button/item-button";
 import { Input } from "../../../components/input/input";
 import { langData, profData } from "../../../data/data management/database-management";
@@ -17,8 +17,18 @@ export function ProfessionalList() {
       </div>
       <div className='pl-professional-list'>
         {profData.map((prof) => {
-          if (prof.name.toLowerCase().includes(text.toLowerCase())) {
-            return <ItemButton image={prof.photo} title={prof.name} subtitle={prof.occupations} />;
+          const name = prof.name.toLowerCase().includes(text.toLowerCase().trim())
+          const occupation = prof.occupations
+            .join(' ')
+            .toLowerCase()
+            .includes(text.toLowerCase().trim())
+
+          if (name || occupation) {
+            return (
+              <React.Fragment key={profData.indexOf(prof)}>
+                <ItemButton image={prof.photo} title={prof.name} subtitle={prof.occupations} />
+              </React.Fragment>
+            );
           }
         })}
       </div>
