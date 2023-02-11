@@ -1,0 +1,23 @@
+.login-logo{
+    height: 130px;
+    width: 250px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-top: 80px;
+}
+.login-header-block{
+    width: calc(100% - 80px);
+    margin-bottom: 50px;
+    margin-top: 40px;
+}
+.login-header-title{
+    width: 280px;
+    color: var(--quaternary-color);
+    font-size: 20px;
+    margin-top: 20px;
+}
+.login-header-subtitle{
+    color: var(--secondary-color);
+    font-size: 12px;
+    margin-bottom: 20px;
+}

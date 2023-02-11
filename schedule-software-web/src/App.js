@@ -7,26 +7,28 @@ import { ProfessionalList } from "./pages/professional/professional-list/profess
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ProfessionalEdit } from "./pages/professional/professional-edit/professional-edit";
 import { ServiceList } from "./pages/service/service-list/service-list";
+import { Login } from "./pages/login/login";
 
 export default function App() {
 
   const pages = [
+    { path: '/login', element: <Login /> },
     { path: '/p', element: <ProfessionalList /> },
     { path: '/p/edit', element: <ProfessionalEdit /> },
     { path: '/s', element: <ServiceList /> }
   ]
 
-return (
-  <div className="background">
-    <Router>
-      <Routes>
-        {pages.map(page => {
-          return (
-            <Route key={pages.indexOf(page)} path={page.path} element={page.element} ></Route>
-          )
-        })}
-      </Routes>
-    </Router>
-  </div>
-);
+  return (
+    <div className="background">
+      <Router>
+        <Routes>
+          {pages.map(page => {
+            return (
+              <Route key={pages.indexOf(page)} path={page.path} element={page.element} ></Route>
+            )
+          })}
+        </Routes>
+      </Router>
+    </div>
+  );
 }

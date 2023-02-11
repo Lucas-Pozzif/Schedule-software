@@ -62,6 +62,20 @@
     "error": {
       "cantBeEmpty": "Preencha o campo.",
       "alreadyExists": "O item já existe."
+    },
+    "login":{
+      "title":"Atendimento é a nossa prioridade!",
+      "subtitle":"Para isso precisamos te conhecer melhor",
+      "logInWith":"Entrar com",
+      "input":{
+        "name":{
+          "label":"Por favor digite seu nome",
+          "placeholder":"nome"
+        },
+        "number":{
+          "label":"Por favor digite seu número"
+        }
+      }
     }
   }
 }
