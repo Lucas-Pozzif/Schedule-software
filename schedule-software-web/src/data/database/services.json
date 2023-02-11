@@ -18,15 +18,12 @@
     
     "id":1,
     "name": "Escova",
-    "value": [25, 33, 49],
+    "value": [25],
     "time": [
-      [true, true, true, false, true, true],
-      [true, true, true, false, true, true, true, true],
-      [true, true, true, false, true, true, true, true, true, true, true]
+      true, true, true, false, true, true
     ],
     "from": true,
-    "photo": null,
-    "stages": ["Curto", "Médio", "Longo"]
+    "photo": null
   },
   {
     

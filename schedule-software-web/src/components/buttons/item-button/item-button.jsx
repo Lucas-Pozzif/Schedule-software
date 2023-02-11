@@ -19,7 +19,7 @@ export function ItemButton({
 }) {
   const [expanded, setExpanded] = useState(false);
 
-  
+
   function isArray(data) {
     return Array.isArray(data);
   }
@@ -28,8 +28,8 @@ export function ItemButton({
     <div className='item-button-group'>
       <div
         className={`item-button ${selected && !isArray(selected)
-            ? "terciary-color-background"
-            : "secondary-color-background"
+          ? "terciary-color-background"
+          : "secondary-color-background"
           }`}>
         <IBLeftBlock
           image={image}
