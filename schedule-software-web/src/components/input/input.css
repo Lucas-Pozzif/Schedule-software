@@ -14,7 +14,7 @@
     display: inline-flex;
     justify-items: start;
     flex-direction: column;
-    color: #EAE0D5;
+    color: var(--quaternary-color);
     font-size: 16px;
     position: absolute;
     top: -16px;

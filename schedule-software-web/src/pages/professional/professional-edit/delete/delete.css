@@ -8,7 +8,7 @@
 }
 
 .epd-title {
-    color: #EAE0D5;
+    color: var(--quaternary-color);
     font-size: 22px;
     width: 310px;
 }

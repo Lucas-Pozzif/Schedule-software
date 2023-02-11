@@ -17,7 +17,7 @@
 .horizontal-icon-button-text{
     text-align: center;
     color: var(--terciary-color);
-    font-size: 12px;
+    font-size: 20px;
 }
 .reverse{
     flex-direction: row-reverse;

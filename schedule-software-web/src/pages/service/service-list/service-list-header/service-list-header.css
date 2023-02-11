@@ -7,7 +7,7 @@
     width: 100%;
 }
 .pl-header-title{
-    color: #EAE0D5;
+    color: var(--quaternary-color);
     font-size: 22px;
     width: 220px;
 }
