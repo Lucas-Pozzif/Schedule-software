@@ -8,6 +8,7 @@ import { EPData } from './data/data'
 import { EPDelete } from './delete/delete'
 
 import './professional-edit.css'
+import { EPService } from './services/service'
 import { EPTime } from './time/time'
 
 export function ProfessionalEdit() {
@@ -23,7 +24,7 @@ export function ProfessionalEdit() {
             "spfder man",
             "Cabeleireiro"
         ],
-        "services": [],
+        "services": [1,4],
         "time": [
             false,
             false,
@@ -182,7 +183,7 @@ export function ProfessionalEdit() {
 
             case "services":
                 return (
-                    <p>Services</p>
+                    <EPService services={services} setServices={setServices} />
                 );
             case "time":
                 return (

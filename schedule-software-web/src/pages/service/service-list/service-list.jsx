@@ -18,7 +18,7 @@ function arrayToTime(array) {
 
 export function ServiceList() {
   const [text, setText] = useState("");
-  const [selected, setSelected] = useState(servData.map(serv => { return serv.stages.map(() => false) }))
+  const [selected, setSelected] = useState(servData.map(serv => { try { return serv.stages.map(() => false) } catch { return false } }))
 
   return (
     <div className='professional-list-page'>
