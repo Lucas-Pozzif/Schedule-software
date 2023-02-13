@@ -44,30 +44,11 @@ export function LoginBody({
     name,
     setName,
     number,
-    setNumber
+    setNumber,
+    stage
 }) {
-    const [state, setState] = useState('loading')
 
-    const auth = getAuth();
-    onAuthStateChanged(auth, (loggedUser) => {
-        console.log(loggedUser)
-        if (!loggedUser) {
-            setState('button');
-            return;
-        }
-
-        const user = new User(loggedUser.uid, undefined, undefined);
-        user.download().then((e) => {
-            if (!e) {
-                setState('input')
-                return
-
-            }
-        }
-        );
-    })
-
-    switch (state) {
+    switch (stage) {
         case 'button':
             return (
                 <LogButton
