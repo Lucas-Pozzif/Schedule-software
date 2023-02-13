@@ -4,6 +4,7 @@ import { langData } from "../../../data/data management/database-management";
 import './login-header.css';
 
 export function LoginHeader() {
+    
     return (
         <>
             <img className="login-logo" src={require('../../../assets/logo-leandro-e-alessandro.png')}></img>
