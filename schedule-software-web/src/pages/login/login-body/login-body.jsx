@@ -6,6 +6,7 @@ import './login-body.css'
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { User } from '../../../data/database/users';
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function InputForm({
     name,
@@ -65,6 +66,14 @@ export function LoginBody({
                     setNumber={setNumber}
                 />
             );
+
+        case 'logged':
+            return(
+                <>
+                <p>You're logged!</p>
+                <Link to={'/'}>Home</Link>
+                </>
+            )
 
         default:
             return (

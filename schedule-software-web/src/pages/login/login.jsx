@@ -78,7 +78,7 @@ export function Login({
         <div className="login-page">
             <LoginHeader />
             <LoginBody loginWithGoogle={logWithGoogle} loginWithApple={logWithGoogle} name={name} setName={setName} number={number} setNumber={setNumber} stage={stage} />
-            <div onClick={() => { updateUser() }} className='ep-large-button'>
+            <div onClick={() => { updateUser(name,number,setStage) }} className='ep-large-button'>
                 <LargeButton hide={!isValid(name, number, setStage)} text={langData.continue} />
             </div>
         </div>
